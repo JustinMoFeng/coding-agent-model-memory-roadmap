@@ -1,0 +1,64 @@
+site_name: Coding Agent Model and Memory Roadmap
+site_description: 模型后训练、Coding Agent Memory、论文阅读和工程实验的长期研究系统
+site_url: https://JustinMoFeng.github.io/coding-agent-model-memory-roadmap/
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - toc.follow
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+docs_dir: content
+
+nav:
+  - 首页: index.md
+  - 周计划:
+      - Week 01: weeks/week-01.md
+  - 总体路线:
+      - 总体定位: docs/00-positioning.md
+      - 一年路线: docs/01-one-year-roadmap.md
+      - Agent 训练与 AI Infra: docs/02-agent-training-ai-infra.md
+      - Coding Agent Memory: docs/03-coding-agent-memory.md
+      - 论文阅读系统: docs/04-paper-reading-system.md
+      - 写作与研究习惯: docs/05-writing-and-research-habits.md
+      - 资源地图: docs/06-resource-map.md
+      - 大模型 / 后训练学习主线: docs/07-model-learning-path.md
+      - 知识系统与代码组织: docs/08-research-os-and-code-organization.md
+  - 专题:
+      - Multica Memory 调研: topics/multica-memory-reading-guide.md
+  - 项目:
+      - Agent Training Lab: projects/agent-training-lab.md
+      - Coding Agent Memory Lab: projects/coding-agent-memory-lab.md
+  - 模板:
+      - 周计划模板: reference/templates/week-plan-template.md
+      - 论文笔记模板: reference/templates/paper-note.md
+      - 实验记录模板: reference/templates/experiment-log.md
+      - 周复盘模板: reference/templates/weekly-review.md
