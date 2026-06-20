@@ -31,10 +31,11 @@ PIP_INDEX_URL=https://pypi.org/simple make install
 - `content/`：知识库与 GitHub Pages 内容，是主要 source of truth。
 - `labs/`：小型代码实验，适合放 tokenizer 观察、toy SFT、memory schema prototype。
 - 外部项目 repo：成熟项目单独建仓库，在 `content/projects/` 中写项目说明和链接。
-- `scripts/`：生成周计划、论文卡片、实验记录的脚本。
+- `scripts/`：生成周计划、每日进度页、论文卡片、实验记录的脚本。
 
 ## 起步入口
 
 - 网站首页：[content/index.md](content/index.md)
-- 第一周计划：[content/weeks/week-01.md](content/weeks/week-01.md)
+- 第一周计划：[content/weeks/2026-06-22/index.md](content/weeks/2026-06-22/index.md)
 - 周计划模板：[content/reference/templates/week-plan-template.md](content/reference/templates/week-plan-template.md)
+- 每日进度模板：[content/reference/templates/daily-log-template.md](content/reference/templates/daily-log-template.md)

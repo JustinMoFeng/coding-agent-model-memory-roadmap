@@ -1,72 +1,39 @@
-# Coding Agent 模型与 Memory 成长路线
+# Coding Agent Model and Memory Research OS
 
-这个仓库用于维护一条一年的学习、研究和工程路线：**往模型后训练方向深耕，同时保留 Coding Agent Memory 作为长期研究主线**。
+这个站点用于维护一条长期成长路线：
 
-核心判断：
+> 以模型后训练为主线，以 Coding Agent Memory 为研究问题，以 Coding Agent 为工程落地场景。
 
-> 以模型后训练能力为主线，以 Coding Agent Memory 为研究问题，以 Coding Agent 为工程落地场景。
+未来一年最重要的能力是：
 
-更具体地说，你要逐步形成的能力是：
+> 能把真实 Coding Agent 的失败转化成数据、reward、eval 和 post-training 实验。
 
-> 能把真实 Coding Agent 的失败转化为数据、reward、eval 和 post-training 实验。
+## 入口
 
-## 总方向
+- [Overview](overview.md)：整体要学什么、目标是什么、如何维护这个系统。
+- [Agent Training 路线纵览](agent-training-overview.md)：模型后训练、数据、rollout、reward、eval。
+- [Memory 路线总览](memory-overview.md)：Coding Agent 的 episodic / semantic / procedural memory。
+- [科研能力提升](research-skill-overview.md)：论文卡片、实验日志、写作和工程组织。
 
-这条路线分成两条工程线。
+## 当前周计划
 
-1. **Agent 训练 / AI Infra**
-   - Coding task 数据合成。
-   - Agent rollout 和 trajectory 收集。
-   - Reward、eval 和 failure analysis。
-   - SFT、DPO、GRPO/RLVR 和 post-training infra。
+- [2026-06-22 至 2026-06-28](weeks/2026-06-22/index.md)
 
-2. **Coding Agent Memory**
-   - Repo memory、user memory、task memory、bug memory。
-   - Memory 写入、检索、更新、遗忘和冲突处理。
-   - Memory-specific eval。
-   - 跨 session 的长期 Coding Agent 行为。
+每日学习完成后，不直接改周计划正文，而是更新当周目录下对应日期的页面：
 
-两条线最终汇合到一个研究问题：
+- [2026-06-22](weeks/2026-06-22/2026-06-22.md)
+- [2026-06-23](weeks/2026-06-22/2026-06-23.md)
+- [2026-06-24](weeks/2026-06-22/2026-06-24.md)
+- [2026-06-25](weeks/2026-06-22/2026-06-25.md)
+- [2026-06-26](weeks/2026-06-22/2026-06-26.md)
+- [2026-06-27](weeks/2026-06-22/2026-06-27.md)
+- [2026-06-28](weeks/2026-06-22/2026-06-28.md)
 
-> 如何把长期 memory 转化为 Coding Agent 可训练、可控制、可评测的模型能力？
+## 维护原则
 
-## 仓库结构
+- 周文档是计划和本周总结。
+- 每日文档是进度、卡点和产出。
+- 专题文档沉淀深入调研。
+- 小实验代码放 `labs/`。
+- 成熟工程单独建 repo，并在这里维护项目说明和实验报告。
 
-```text
-.
-├── README.md
-├── mkdocs.yml
-├── requirements.txt
-├── content/
-│   ├── docs/
-│   ├── weeks/
-│   ├── topics/
-│   ├── projects/
-│   └── reference/templates/
-├── labs/
-└── scripts/
-```
-
-## 使用方式
-
-不要把这个仓库当成固定课表，而是把它当成一个长期维护的研究工作台。
-
-从这里开始执行：
-
-- [Week 01：启动周 - 后训练视角的 LM 基础 + Multica Memory 调研](weeks/week-01.md)
-- [大模型 / 后训练学习主线](docs/07-model-learning-path.md)
-- [周计划模板](reference/templates/week-plan-template.md)
-- [知识系统与代码组织](docs/08-research-os-and-code-organization.md)
-
-每周至少留下三个产物：
-
-1. 一篇论文笔记。
-2. 一个工程 commit 或可运行实验。
-3. 一段 research log，记录本周问题、证据、失败和下一步。
-
-这条路线不是为了“学完所有 AI”，而是为了形成几项核心能力：
-
-- 理解模型行为如何被数据、目标函数和后训练塑造。
-- 搭建可靠的 Coding Agent 训练、rollout 和 eval 闭环。
-- 把 Memory 行为抽象成研究问题、数据集、reward 和评测。
-- 把工程实验写成清晰的技术报告或论文草稿。

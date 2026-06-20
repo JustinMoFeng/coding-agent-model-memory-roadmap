@@ -40,18 +40,20 @@ docs_dir: content
 
 nav:
   - 首页: index.md
+  - Overview: overview.md
+  - Agent Training: agent-training-overview.md
+  - Memory: memory-overview.md
+  - 科研提升: research-skill-overview.md
   - 周计划:
-      - Week 01: weeks/week-01.md
-  - 总体路线:
-      - 总体定位: docs/00-positioning.md
-      - 一年路线: docs/01-one-year-roadmap.md
-      - Agent 训练与 AI Infra: docs/02-agent-training-ai-infra.md
-      - Coding Agent Memory: docs/03-coding-agent-memory.md
-      - 论文阅读系统: docs/04-paper-reading-system.md
-      - 写作与研究习惯: docs/05-writing-and-research-habits.md
-      - 资源地图: docs/06-resource-map.md
-      - 大模型 / 后训练学习主线: docs/07-model-learning-path.md
-      - 知识系统与代码组织: docs/08-research-os-and-code-organization.md
+      - 2026-06-22 至 2026-06-28:
+          - 本周计划: weeks/2026-06-22/index.md
+          - 2026-06-22: weeks/2026-06-22/2026-06-22.md
+          - 2026-06-23: weeks/2026-06-22/2026-06-23.md
+          - 2026-06-24: weeks/2026-06-22/2026-06-24.md
+          - 2026-06-25: weeks/2026-06-22/2026-06-25.md
+          - 2026-06-26: weeks/2026-06-22/2026-06-26.md
+          - 2026-06-27: weeks/2026-06-22/2026-06-27.md
+          - 2026-06-28: weeks/2026-06-22/2026-06-28.md
   - 专题:
       - Multica Memory 调研: topics/multica-memory-reading-guide.md
   - 项目:
@@ -59,6 +61,7 @@ nav:
       - Coding Agent Memory Lab: projects/coding-agent-memory-lab.md
   - 模板:
       - 周计划模板: reference/templates/week-plan-template.md
+      - 每日进度模板: reference/templates/daily-log-template.md
       - 论文笔记模板: reference/templates/paper-note.md
       - 实验记录模板: reference/templates/experiment-log.md
       - 周复盘模板: reference/templates/weekly-review.md

@@ -1,4 +1,4 @@
-# Week 01：启动周 - LM 基础与 Multica Memory 调研
+# 2026-06-22 至 2026-06-28：启动周 - LM 基础与 Multica Memory 调研
 
 时间建议：2026-06-22 至 2026-06-28。
 
@@ -21,7 +21,7 @@
 - Hugging Face Transformers 的 causal language modeling 文档。
 - TRL SFTTrainer / dataset formats 文档。
 
-本周做到：能解释 tokenizer、causal LM loss、generation 和 SFT data format 的关系，并能把一个简化 coding-agent trajectory 改写成 SFT 样本。完整 A 线学习主线见 [大模型 / 后训练学习主线](../docs/07-model-learning-path.md)。
+本周做到：能解释 tokenizer、causal LM loss、generation 和 SFT data format 的关系，并能把一个简化 coding-agent trajectory 改写成 SFT 样本。完整 A 线学习主线见 [大模型 / 后训练学习主线](../../archive/07-model-learning-path.md)。
 
 ### B 线要学什么
 
@@ -36,7 +36,7 @@
 - `server/internal/handler/issue_metadata.go`。
 - skill 相关代码。
 
-本周做到：能说明 Multica 的核心对象和 task lifecycle，并能把 issue、comment、task run、metadata、skill 映射到 episodic / semantic / procedural memory。详细 Multica 调研路径见 [Multica Memory 调研指南](../topics/multica-memory-reading-guide.md)。
+本周做到：能说明 Multica 的核心对象和 task lifecycle，并能把 issue、comment、task run、metadata、skill 映射到 episodic / semantic / procedural memory。详细 Multica 调研路径见 [Multica Memory 调研指南](../../topics/multica-memory-reading-guide.md)。
 
 ### 本周不做什么
 
@@ -48,12 +48,22 @@
 
 ## 2. 每日安排
 
+每日学习进度不要直接写在本页。本页只维护计划；每天完成后更新对应日期页：
+
+- [2026-06-22](2026-06-22.md)
+- [2026-06-23](2026-06-23.md)
+- [2026-06-24](2026-06-24.md)
+- [2026-06-25](2026-06-25.md)
+- [2026-06-26](2026-06-26.md)
+- [2026-06-27](2026-06-27.md)
+- [2026-06-28](2026-06-28.md)
+
 ### Day 1：建立主线
 
 A 线：
 
 - 看 CS336 课程主页，重点关注 tokenizer / language modeling intro 的课程位置。
-- 阅读 [大模型 / 后训练学习主线](../docs/07-model-learning-path.md) 的 M1-M2。
+- 阅读 [大模型 / 后训练学习主线](../../archive/07-model-learning-path.md) 的 M1-M2。
 - 写下 pretraining、SFT、DPO、RLVR 的一句话区别。
 
 B 线：
@@ -63,7 +73,7 @@ B 线：
 
 产出：
 
-- `notes/week-01-lm-foundation.md` 初稿。
+- `notes/2026-06-22-lm-foundation.md` 初稿。
 - Multica 核心对象关系图或文字版对象表。
 
 ### Day 2：Tokenizer 和数据形态
@@ -173,7 +183,7 @@ B 线：
 
 产出：
 
-- `logs/week-01-review.md`。
+- `logs/2026-06-22-weekly-review.md`。
 - 一份 5 点短版调研结论：
   - 我对 Multica 的理解。
   - 它已有的 memory-like 机制。
@@ -186,26 +196,26 @@ B 线：
 本周至少交付这些文件：
 
 ```text
-notes/week-01-lm-foundation.md
-notes/week-01-multica-code-reading.md
-notes/week-01-episodic-semantic-memory.md
-logs/week-01-review.md
+notes/2026-06-22-lm-foundation.md
+notes/2026-06-22-multica-code-reading.md
+notes/2026-06-22-episodic-semantic-memory.md
+logs/2026-06-22-weekly-review.md
 ```
 
-其中 `week-01-lm-foundation.md` 至少包含：
+其中 `2026-06-22-lm-foundation.md` 至少包含：
 
 - Tokenizer 对中文、代码、diff/error log 的 5 条观察。
 - 一个 causal LM 输入、label、loss 的最小例子。
 - 一个 coding-agent trajectory 改写成 SFT 样本的例子。
 
-`week-01-multica-code-reading.md` 至少包含：
+`2026-06-22-multica-code-reading.md` 至少包含：
 
 - Multica 核心对象图。
 - Task lifecycle 图。
 - Issue metadata 分析。
 - Skill 和 memory 的关系。
 
-`week-01-episodic-semantic-memory.md` 至少包含：
+`2026-06-22-episodic-semantic-memory.md` 至少包含：
 
 - Episodic memory 在 Coding Agent 中对应什么。
 - Semantic memory 在 Coding Agent 中对应什么。

@@ -1,8 +1,8 @@
 # Multica Memory 调研指南
 
-这个文档承接 Week 01 的 B 线，用于集中记录 Multica 和 Coding Agent Memory 相关的详细调研路径。
+这个文档承接 2026-06-22 至 2026-06-28 这一周的 B 线，用于集中记录 Multica 和 Coding Agent Memory 相关的详细调研路径。
 
-Week 01 的周计划只保留执行安排；Multica 的细节放在这里。
+当周计划只保留执行安排；Multica 的细节放在这里。
 
 ## 调研目标
 
@@ -218,4 +218,3 @@ Memory 视角：
 | Skill | semantic/procedural memory | reusable knowledge | 高 | 可能过度泛化 |
 | Squad instructions | semantic/procedural memory | routing rule | 高 | 路由规则过时 |
 | Autopilot | procedural memory | recurring workflow | 高 | 自动化误触发 |
-

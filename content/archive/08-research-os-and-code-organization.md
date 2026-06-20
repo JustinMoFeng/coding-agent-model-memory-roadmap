@@ -84,7 +84,7 @@
 
 ```text
 content/
-  docs/
+  archive/
   weeks/
   topics/
   papers/
