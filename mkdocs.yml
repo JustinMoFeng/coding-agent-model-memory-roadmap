@@ -40,10 +40,11 @@ docs_dir: content
 
 nav:
   - 首页: index.md
-  - Overview: overview.md
-  - Agent Training: agent-training-overview.md
-  - Memory: memory-overview.md
-  - 科研提升: research-skill-overview.md
+  - Overview:
+      - 总览: overview.md
+      - Agent Training: agent-training-overview.md
+      - Memory: memory-overview.md
+      - 科研提升: research-skill-overview.md
   - 周计划:
       - 2026-06-22 至 2026-06-28:
           - 本周计划: weeks/2026-06-22/index.md
