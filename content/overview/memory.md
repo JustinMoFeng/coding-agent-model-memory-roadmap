@@ -67,7 +67,7 @@ Memory 线的目标是：
 - execution history 如何支持回溯和经验提取。
 - skill 如何接近 semantic/procedural memory。
 
-详细调研路径见 [Multica Memory 调研指南](topics/multica-memory-reading-guide.md)。
+详细调研路径见 [Multica Memory 调研指南](../topics/multica-memory-reading-guide.md)。
 
 ## 后续产出
 
@@ -76,4 +76,3 @@ Memory 线的目标是：
 - Memory eval set。
 - Multica / OpenCode / 其他框架的可插拔 memory layer 设计。
 - Memory-aware coding-agent eval report。
-

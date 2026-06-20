@@ -64,7 +64,7 @@ Tokenizer
 - TRL SFTTrainer / DPOTrainer / GRPOTrainer 文档。
 - vLLM / SGLang 文档。
 
-更细的模块拆分保留在 [大模型 / 后训练学习主线](archive/07-model-learning-path.md)。
+更细的模块拆分保留在 [大模型 / 后训练学习主线](../archive/07-model-learning-path.md)。
 
 ## 近期产出
 

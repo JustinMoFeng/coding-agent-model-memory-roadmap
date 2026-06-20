@@ -31,7 +31,7 @@
 - 对 Coding Agent post-training 或 Memory 有什么启发？
 - 最小复现实验是什么？
 
-模板见 [论文笔记模板](reference/templates/paper-note.md)。
+模板见 [论文笔记模板](../reference/templates/paper-note.md)。
 
 ## 实验记录
 
@@ -46,7 +46,7 @@
 - Decision。
 - Next step。
 
-模板见 [实验记录模板](reference/templates/experiment-log.md)。
+模板见 [实验记录模板](../reference/templates/experiment-log.md)。
 
 ## 代码组织
 
@@ -59,4 +59,4 @@
 - 关键结果。
 - 外部链接。
 
-详细原则见 [知识系统与代码组织](archive/08-research-os-and-code-organization.md)。
+详细原则见 [知识系统与代码组织](../archive/08-research-os-and-code-organization.md)。
