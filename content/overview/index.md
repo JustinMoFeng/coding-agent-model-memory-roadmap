@@ -56,7 +56,7 @@
 
 ## 当前执行入口
 
-- [2026-06-22 至 2026-06-28 周计划](../weeks/2026-06-22/index.md)
+- [2026-06-25 至 2026-06-28 周计划](../weeks/2026-06-25/index.md)
 - [Multica Memory 调研指南](../topics/multica-memory-reading-guide.md)
 - [周计划模板](../reference/templates/week-plan-template.md)
 - [每日进度模板](../reference/templates/daily-log-template.md)

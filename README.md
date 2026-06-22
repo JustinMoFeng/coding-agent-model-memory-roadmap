@@ -36,6 +36,6 @@ PIP_INDEX_URL=https://pypi.org/simple make install
 ## 起步入口
 
 - 网站首页：[content/index.md](content/index.md)
-- 第一周计划：[content/weeks/2026-06-22/index.md](content/weeks/2026-06-22/index.md)
+- 第一周计划：[content/weeks/2026-06-25/index.md](content/weeks/2026-06-25/index.md)
 - 周计划模板：[content/reference/templates/week-plan-template.md](content/reference/templates/week-plan-template.md)
 - 每日进度模板：[content/reference/templates/daily-log-template.md](content/reference/templates/daily-log-template.md)

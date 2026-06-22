@@ -1,6 +1,6 @@
 # Multica Memory 调研指南
 
-这个文档承接 2026-06-22 至 2026-06-28 这一周的 B 线，用于集中记录 Multica 和 Coding Agent Memory 相关的详细调研路径。
+这个文档承接 2026-06-25 至 2026-06-28 这一周的 B 线，用于集中记录 Multica 和 Coding Agent Memory 相关的详细调研路径。
 
 当周计划只保留执行安排；Multica 的细节放在这里。
 
