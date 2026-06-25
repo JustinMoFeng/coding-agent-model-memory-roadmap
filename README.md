@@ -13,6 +13,8 @@
 
 文档站源文件在 `content/` 下，站点使用 MkDocs Material 构建。
 
+文档站地址：https://JustinMoFeng.github.io/coding-agent-model-memory-roadmap/
+
 ## 本地预览
 
 ```bash
