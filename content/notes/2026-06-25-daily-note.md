@@ -1,4 +1,8 @@
-# CS336 Lecture 1 片段：模型设计的高层原则
+# 2026-06-25 昨日笔记
+
+## A 线：CS336 / 后训练基础
+
+### CS336 Lecture 1 片段：模型设计的高层原则
 
 - 讲义材料：https://cs336.stanford.edu/lectures?trace=lecture_01
 
@@ -10,7 +14,7 @@
 
 我的理解：模型设计不是单独追求某一项，而是在表达能力、训练稳定性和硬件效率之间做权衡。
 
-## 待读材料
+### 待读材料
 
 - **How to Scale Your Model**
   - 作用：从系统角度讲 LLM scaling 的高层概念。
@@ -28,7 +32,7 @@
   - 链接：https://huggingface.co/docs/transformers/en/model_doc/gpt2#transformers.GPT2LMHeadModel.forward
   - 作用：确认 `labels` 的语义，尤其是 causal LM 里 labels 会在模型内部 shift。
 
-## 课程大纲
+### 课程大纲
 
 ```python
 def course_syllabus():
@@ -39,39 +43,39 @@ def course_syllabus():
     alignment()     # Assignment 5: RLHF, RL algorithms, RL systems
 ```
 
-### 1. Basics
+#### 1. Basics
 
 要学什么：先把语言模型最小 pipeline 跑通，包括 tokenization、模型架构和训练。
 
 Assignment 1：实现 tokenizer、Transformer 基本结构、loss、optimizer 和 training loop。
 
-### 2. Systems
+#### 2. Systems
 
 要学什么：让模型在硬件上跑得快，包括 kernels、并行训练和推理。
 
 Assignment 2：理解/实现 kernel 优化、分布式并行、inference 相关系统能力。
 
-### 3. Scaling Laws
+#### 3. Scaling Laws
 
 要学什么：用小规模实验预测大规模训练效果，判断参数量、数据量和算力预算怎么配。
 
 Assignment 3：围绕 scaling laws 做实验和预测。
 
-### 4. Data
+#### 4. Data
 
 要学什么：训练数据从哪里来、怎么评估、清洗、转换、过滤和去重。
 
 Assignment 4：处理真实数据，做 evaluation、curation、transformation、filtering、deduplication。
 
-### 5. Alignment
+#### 5. Alignment
 
 要学什么：把 base model 调成更符合人类需求/任务需求的 assistant，包括 RLHF、RL 算法和 RL 系统。
 
 Assignment 5：围绕 RLHF、RL algorithms、RL systems 做 alignment 训练。
 
-## Tokenizer
+### Tokenizer
 
-### Observations
+#### Observations
 
 - 一个单词和它前面的空格常常会被合成同一个 token，例如 `" world"`。
 - 同一个词出现在句首和句中，可能会被表示成不同 token，例如 `"hello hello"` 里的两个 `hello`。
@@ -79,7 +83,7 @@ Assignment 5：围绕 RLHF、RL algorithms、RL systems 做 alignment 训练。
 
 我的理解：tokenizer 不是按“人眼里的单词”切，而是按训练语料里高频、方便压缩的字符串片段切。所以空格、位置和数字格式都会影响 token 表示。
 
-### Compression ratio
+#### Compression ratio
 
 ```python
 compression_ratio = get_compression_ratio(string, indices)
@@ -90,9 +94,9 @@ compression_ratio = get_compression_ratio(string, indices)
 - 可以通过增大 vocabulary size 来提高 compression ratio，因为可用 token 值更多，更容易把长片段合成一个 token。
 - 代价：vocabulary size 变大后，每个 token 的出现会更稀疏，带来 sparsity 问题。
 
-### 四种 tokenizer 方案
+#### 四种 tokenizer 方案
 
-#### 1. Character tokenizer
+##### 1. Character tokenizer
 
 Unicode string 可以看作 Unicode character 的序列，每个 character 可以用 `ord` 转成 code point，再用 `chr` 转回来。
 
@@ -119,7 +123,7 @@ assert string == reconstructed
 
 结论：character tokenizer 是 “large vocabulary + low compression ratio”，两边都不占优。
 
-#### 2. Byte tokenizer
+##### 2. Byte tokenizer
 
 Unicode string 可以先用 UTF-8 表示成 bytes，每个 byte 是 `0..255` 之间的整数。
 
@@ -146,7 +150,7 @@ assert string == reconstructed
 
 结论：byte tokenizer 的 vocab 很漂亮，但序列太长。
 
-#### 3. Word tokenizer
+##### 3. Word tokenizer
 
 传统 NLP 更接近这种做法：把字符串切成词和符号 chunk。
 
@@ -169,7 +173,7 @@ chunks = regex.findall(r"\w+|.", string)
 
 结论：word tokenizer 的 compression ratio 好，但 vocab 不可控，未知词处理很丑。
 
-#### 4. BPE tokenizer
+##### 4. BPE tokenizer
 
 BPE（Byte Pair Encoding）最初由 Philip Gage 在 1994 年提出用于数据压缩，后来被 Sennrich 等人在 2015 年用于神经机器翻译，再后来被 GPT-2 使用。
 
@@ -198,7 +202,7 @@ assert string == reconstructed
 
 结论：BPE 是折中方案。它保留 byte tokenizer 的可覆盖性，又通过 merge 常见片段提高 compression ratio，同时 vocabulary size 可以通过 `num_merges` 控制。
 
-### 一个例子串起来
+#### 一个例子串起来
 
 同一个字符串：
 
@@ -224,7 +228,7 @@ character: 能表示所有字符，但 vocab 大、压缩差
 -> BPE: 从 byte 出发，通过合并高频片段，在 vocab size 和 compression ratio 之间折中
 ```
 
-### 明天实践：BPE tokenizer implementation
+#### 明天实践：BPE tokenizer implementation
 
 讲义里的最小 BPE 流程：
 
@@ -250,7 +254,7 @@ Assignment 1 会在这个基础上继续做：
 
 定位：这部分适合明天作为 tokenizer 实践，不是今天 A 线的主任务。
 
-## Causal LM：input_ids / labels / loss
+### Causal LM：input_ids / labels / loss
 
 ![input_ids 和 labels 的错位关系](../assets/cs336/input-labels-shift.png)
 
@@ -263,16 +267,16 @@ Assignment 1 会在这个基础上继续做：
 
 一句话：`input_ids` 是模型看到的前文，`labels` 是每个位置要预测的下一个 token。
 
-## Pretraining / SFT / DPO / RLVR-GRPO
+### Pretraining / SFT / DPO / RLVR-GRPO
 
-### 四个一句话定义
+#### 四个一句话定义
 
 - **Pretraining**：搭 tokenizer、模型架构和大规模语料，用 `input_ids -> labels -> loss` 的 next-token prediction 训练出 base model。
 - **SFT**：在 base model 上继续用监督数据训练，例如 instruction、回答、代码片段或 coding-agent trajectory，让模型更像这些高质量示范数据。
 - **DPO**：用 `chosen / rejected` 偏好对直接优化模型，让模型更偏向被选择的回答；它不需要像 PPO 那样先训练 reward model 再做在线 RL。
 - **RLVR / GRPO**：用可验证 reward 或规则化 reward 进一步优化模型行为；GRPO 用一组候选回答的相对好坏来更新，省掉单独的 critic。
 
-### 我的理解
+#### 我的理解
 
 CS336 的流程可以理解成：先从 tokenizer 开始，把文本变成 token；再搭建模型架构；然后构建大量语料，把同一串 token 作为 `input_ids` 和 `labels`，通过内部 shift 训练 next-token prediction。训练完得到的是 base model，它主要学会“接着写”。
 
@@ -280,7 +284,7 @@ CS336 的流程可以理解成：先从 tokenizer 开始，把文本变成 token
 
 如果没有足够多高质量示范，或者想优化“哪个回答更好”这类偏好，就可以用偏好优化或 RL。PPO 典型流程是训练 reward model，再用 reward 训练 policy；DPO 则更简单，直接用 chosen/rejected 偏好对更新模型，所以形式上很接近 SFT，但目标函数是在拉开 chosen 和 rejected 的概率差距；GRPO 更偏 RLVR，用同一问题的一组输出做相对比较，省掉 critic。
 
-## Coding-agent failure 如何进入 post-training
+### Coding-agent failure 如何进入 post-training
 
 一个真实 coding-agent 失败可以先从失败点开始做 BoN（best-of-N）继续 rollout：
 
@@ -298,7 +302,7 @@ RL 版本的关键是把 coding 任务变成一个可交互环境：
 
 我的理解：SFT 更像“把正确做法教给模型”，RL 更像“让模型在可验证环境里自己试，成功就加强、失败就减弱”。Coding agent 比普通聊天更适合 RLVR，因为很多结果可以被测试、编译、静态检查或 diff 规则验证。
 
-## 最小链路：token -> causal LM loss -> SFT data
+### 最小链路：token -> causal LM loss -> SFT data
 
 文本、代码、diff、tool call 和 agent trajectory 本质上都要先被序列化成字符串，再经过 tokenizer 变成 token ids。tokenizer 决定了这些内容如何被切分，比如文件路径、函数名、错误日志、patch 里的符号都会变成模型实际看到的 token 序列。
 
@@ -311,3 +315,13 @@ SFT 阶段没有换掉 causal LM 的基本训练目标，仍然是 next-token pr
 所以 coding-agent trajectory 能变成 SFT 数据，是因为 agent 的观察、思考、工具调用、命令、patch 和最终回答都可以被表示成一段 token 序列。训练时模型不是抽象地学习“成功”，而是在任务上下文里学习：看到前面的 issue、文件内容、测试错误和操作历史后，下一个合理的 action token / patch token / answer token 应该是什么。
 
 一句话总结：tokenizer 把行为变成 token，causal LM loss 训练模型预测下一个 token，SFT 则把“我们希望模型模仿的成功行为”放进这个 next-token prediction 框架里继续训练。
+
+## B 线：Multica Memory 调研
+
+昨日未推进，顺延到 2026-06-26。
+
+## 工作
+
+- opencode 轨迹工作台改写。
+- opencode 调研 SDD skills。
+- multi-stage 基本跑通，且优化性能。
